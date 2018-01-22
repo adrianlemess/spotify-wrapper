@@ -1,0 +1,65 @@
+{
+  "name": "udemy-js-tdd",
+  "version": "1.0.0",
+  "description": "Our course lib JS com TDD na prática",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "npm run test -- --watch",
+    "test:coverage": "nyc npm test",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint && npm run test:coverage",
+    "build": "./node_modules/.bin/webpack --colors --progress --config webpack.config.js",
+    "watch": "npm run build -- --watch",
+    "serve": "./node_modules/.bin/webpack-dev-server --inline --open"
+  },
+  "nyc": {
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"],
+    "check-coverage": true,
+    "functions": 80,
+    "lines": 80
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianlemess/js-tdd-course.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Adrian Lemes <adrianlemess@gmail.com> (http://adrianlemess.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrianlemess/js-tdd-course/issues"
+  },
+  "homepage": "https://github.com/adrianlemess/js-tdd-course#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/preset-es2017": "^7.0.0-beta.37",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "mocha": "^4.1.0",
+    "sinon": "^4.1.5",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
