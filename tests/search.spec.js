@@ -2,15 +2,15 @@ import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
+import { search, searchAlbums, searchPlaylist, searchArtists, searchTrack } from '../src/search';
+
 chai.use(sinonChai);
 sinonStubPromise(sinon);
 
-
 global.fetch = require('node-fetch');
 
-import { search, searchAlbums, searchPlaylist, searchArtists, searchTrack } from '../src/main';
 
-describe('Spotify Wrapper', () => {
+describe('Search', () => {
   let fetchedStub;
   let promise;
 
@@ -24,15 +24,15 @@ describe('Spotify Wrapper', () => {
   });
 
   describe('Smoke Test', () => {
-     // Search genérico  (todos os tipos) e que pode buscar por mais de um tipo
-     // searchAlbums
-     // searchArtists
-     // searchTracks
-     // searchPlaylist
+    // Search genérico  (todos os tipos) e que pode buscar por mais de um tipo
+    // searchAlbums
+    // searchArtists
+    // searchTracks
+    // searchPlaylist
 
-     it('should exists the search method', () => {
-        expect(search).to.exist;
-     });
+    it('should exists the search method', () => {
+      expect(search).to.exist;
+    });
 
     it('should exists the search method', () => {
       expect(searchAlbums).to.exist;
@@ -66,7 +66,8 @@ describe('Spotify Wrapper', () => {
         expect(fetchedStub).to.have.been
           .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist');
 
-        const albums = search('Incubus', 'album')
+        const albums = search('Incubus', 'album');
+
         expect(fetchedStub).to.have.been
           .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=album');
       });
@@ -108,9 +109,9 @@ describe('Spotify Wrapper', () => {
 
     it('should call fetch with the correct URL', () => {
       const albums = searchAlbums('Incubus');
-      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=albums');
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=album');
       const albums2 = searchAlbums('Anitta');
-      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Anitta&type=albums');
+      expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Anitta&type=album');
     });
   });
 
@@ -136,8 +137,10 @@ describe('Spotify Wrapper', () => {
 
     it('should call fetch with the correct URL', () => {
       const playlist = searchPlaylist('Incubus');
+
       expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=playlist');
       const playlist2 = searchPlaylist('Anitta');
+
       expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Anitta&type=playlist');
     });
   });
