@@ -17,7 +17,7 @@
     "build:all":"npm run build && npm run build:umd && npm run build:umd:min",
     "watch": "npm run build -- --watch",
     "serve": "./node_modules/.bin/webpack-dev-server --inline --open",
-    "coveralls":"nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "coveralls":"npm run test:coverage && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "reporter": [
