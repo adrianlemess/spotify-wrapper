@@ -12,12 +12,12 @@
     "prepush": "npm run lint && npm run test:coverage",
     "build": "./node_modules/.bin/babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
-    "build:umd":"./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.js",
-    "build:umd:min":"./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.min.js -p",
-    "build:all":"npm run build && npm run build:umd && npm run build:umd:min",
+    "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "watch": "npm run build -- --watch",
     "serve": "./node_modules/.bin/webpack-dev-server --inline --open",
-    "coveralls":"npm run test:coverage && nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "reporter": [
@@ -56,6 +56,7 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
