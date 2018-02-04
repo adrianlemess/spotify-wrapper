@@ -1,13 +1,11 @@
 language: node_js
-version:
+node_js:
   - "8"
-
 cache:
   directories:
     "node_modules"
 
 before-script:
-  npm run build:all
-git commit
+  - npm run build:all
 after_success:
-  npm run test:coverage
+  - npm run test:coverage
