@@ -8,4 +8,4 @@ cache:
 before-script:
   - npm run build:all
 after_success:
-  -npm run coveralls
+  - npm run coveralls
