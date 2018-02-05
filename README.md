@@ -228,9 +228,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-| ![Adrian Lemes](https://avatars1.githubusercontent.com/u/12432777?s=400&u=927d77dcc0b02c1ac69360f2194336a2517e6f08&v=4)|
-|:---------------------:|
-|  [Adrian Lemes](https://github.com/adrianlemess/)   |
+<h5 align="center">
+  <a href="adrianlemess.github.io">
+  <img src="https://avatars1.githubusercontent.com/u/12432777?s=400&u=927d77dcc0b02c1ac69360f2194336a2517e6f08&v=4" width="100"></a>
+  <br>
+    Adrian Lemes
+   <br>
+  <br>
+</h1>
+
 
 
 
