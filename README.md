@@ -228,7 +228,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-<h5 align="center">
+<h5 align="left">
   <a href="adrianlemess.github.io">
   <img src="https://avatars1.githubusercontent.com/u/12432777?s=400&u=927d77dcc0b02c1ac69360f2194336a2517e6f08&v=4" width="100"></a>
   <br>
@@ -236,9 +236,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
    <br>
   <br>
 </h1>
-
-
-
 
 ## License
 
